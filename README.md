@@ -1,128 +1,87 @@
-<h1 align="center">DSWEB - Gerenciador de Filmes</h1>
+# Gerenciador de Filmes
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" />
-  <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-</p>
+Aplicação web em PHP e MariaDB para cadastrar, listar, editar e excluir filmes.
 
-Este repositório faz parte dos estudos desenvolvidos durante o curso de **Desenvolvimento de Sistemas do SENAI**. O projeto integra conhecimentos de **PHP** com **Banco de Dados MariaDB**, implementando um sistema completo de **CRUD** (Create, Read, Update e Delete) aplicado a um gerenciador de filmes.
+[![PHP](https://img.shields.io/badge/PHP-puro-777BB4?logo=php)](https://www.php.net/)
+[![MariaDB](https://img.shields.io/badge/MariaDB-MySQLi-003545?logo=mariadb)](https://mariadb.org/)
+[![HTML5](https://img.shields.io/badge/HTML-5-E34F26?logo=html5)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS-3-1572B6?logo=css3)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
----
+<!-- Adicionar uma captura de tela em docs/screenshots/ e descomentar a linha abaixo. -->
+<!-- ![Tela principal](docs/screenshots/tela-principal.png) -->
 
-## 📌 Índice
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Executar Localmente](#como-executar-localmente)
+## Sobre
 
----
-
-## Sobre o Projeto
-
-O **Gerenciador de Filmes** é uma aplicação web desenvolvida em PHP que se comunica com um banco de dados **MariaDB** para realizar operações de gerenciamento de filmes. O sistema permite cadastrar, visualizar, editar e remover filmes de forma simples e intuitiva, com filtros de segurança no back-end para evitar bugs e acessos indevidos.
-
----
+O projeto é um CRUD de filmes feito em PHP puro, sem framework. A página principal reúne, lado a lado, a tabela de filmes cadastrados e o formulário de cadastro. Os dados ficam em um banco MariaDB, acessado com a extensão MySQLi.
 
 ## Funcionalidades
 
-- **Cadastrar** um novo filme com as seguintes informações:
-  - Título
-  - Ano de lançamento
-  - Gênero
-  - Sinopse
+- Cadastro de filmes com título, ano de lançamento, gênero e sinopse
+- Listagem dos filmes em tabela, lida diretamente do banco de dados
+- Edição dos dados de um filme cadastrado
+- Exclusão de filmes
+- Validação dos dados no servidor antes da inserção (campos preenchidos e ano com quatro dígitos)
 
--  **Editar** as informações de um filme já cadastrado, podendo alterar qualquer um dos 4 campos.
+## Tecnologias
 
--  **Deletar** um filme existente do banco de dados.
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | PHP, com a extensão MySQLi |
+| Banco de dados | MariaDB (compatível com MySQL) |
+| Interface | HTML5, CSS3, fonte Poppins (Google Fonts) |
+| Ambiente local | XAMPP |
 
--  **Listar** todos os filmes cadastrados em uma tabela atualizada dinamicamente, com dados buscados diretamente do banco de dados.
+## Modelo de dados
 
--  **Segurança**: O back-end conta com filtros de entrada nos cadastros e alterações para prevenir bugs e acessos indevidos.
+| Entidade | Campos principais | Relacionamentos |
+|---|---|---|
+| `filmes` | idFilme, titulo, ano_lancamento, genero, sinopse (opcional), data_criacao | Tabela única, sem relacionamentos |
 
----
+## Como executar
 
-## Tecnologias Utilizadas
+### Pré-requisitos
 
-### <img height="25" src="https://skillicons.dev/icons?i=php&theme=dark"/> PHP
-- Responsável por toda a lógica de back-end.
-- Comunicação com o banco de dados via queries SQL.
-- Filtros de validação e sanitização de entradas.
+- [XAMPP](https://www.apachefriends.org/) com Apache e MySQL (MariaDB), ou PHP com MariaDB/MySQL instalados separadamente
+- Git
 
-### <img height="25" src="https://skillicons.dev/icons?i=mysql&theme=dark"/> MariaDB
-- Banco de dados relacional utilizado para armazenar os filmes.
-- Estrutura criada e populada automaticamente via arquivo `.sql` incluso no repositório.
+### Instalação
 
-### <img height="25" src="https://skillicons.dev/icons?i=html&theme=dark"/> HTML5 + <img height="25" src="https://skillicons.dev/icons?i=css&theme=dark"/> CSS3
-- Interface de usuário para interação com o sistema.
+Clone o repositório dentro da pasta `htdocs` do XAMPP (no Windows, `C:\xampp\htdocs`):
 
----
-
-## Como Executar Localmente
-
-Para rodar este projeto na sua máquina, você precisará de um ambiente de servidor local com suporte a PHP e MariaDB. Recomendamos o uso do **XAMPP**.
-
----
-
-### 1. Instalando o XAMPP
-
-1. Acesse o site oficial: [https://www.apachefriends.org](https://www.apachefriends.org/index.html)
-2. Baixe a versão compatível com o seu sistema operacional (Windows, Linux ou macOS).
-3. Execute o instalador e siga as instruções na tela.
-4. Após a instalação, abra o **XAMPP Control Panel**.
-5. Inicie os módulos **Apache** e **MySQL** clicando em **Start** para cada um.
-
-> ⚠️ O XAMPP utiliza **MariaDB** como banco de dados sob o módulo "MySQL". Os dois são compatíveis entre si.
-
----
-
-### 2. Clonando e Configurando o Projeto
-
-1. Clone este repositório dentro da pasta `htdocs` do XAMPP (geralmente localizada em `C:\xampp\htdocs` no Windows):
-
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-
-2. Após clonar, a estrutura ficará assim:
-   ```
-   C:\xampp\htdocs\seu-repositorio\
-   ```
-
----
-
-### 3. Criando o Banco de Dados com o phpMyAdmin
-
-O repositório inclui o arquivo **`filmes.sql`**, que contém todos os comandos necessários para criar o banco de dados, as tabelas e inserir alguns registros iniciais automaticamente.
-
-Siga os passos abaixo para importá-lo:
-
-1. Com o Apache e o MySQL rodando no XAMPP, acesse o **phpMyAdmin** pelo navegador:
-   ```
-   http://localhost/phpmyadmin
-   ```
-
-2. Com o phpMyAdmin aberto, clique na aba **Importar** no menu superior.
-
-3. Clique em **Procurar** e selecione o arquivo `filmes.sql` localizado na raiz do repositório clonado.
-
-4. Clique em **Executar** no final da página.
-
-5. Após a importação bem-sucedida, você verá o banco de dados com as tabelas e os registros base já criados.
-
----
-
-### 4. Acessando o Sistema
-
-Com tudo configurado, acesse o projeto pelo navegador:
-
-```
-http://localhost/seu-repositorio/
+```bash
+cd C:\xampp\htdocs
+git clone https://github.com/joaomnz23/Projeto-Filmes-PHP.git
 ```
 
-O sistema estará pronto para uso! 
+### Banco de dados
 
----
+1. No XAMPP Control Panel, inicie os módulos **Apache** e **MySQL**.
+2. Acesse o phpMyAdmin em `http://localhost/phpmyadmin`.
+3. Abra a aba **Importar**, selecione o arquivo `filmes.sql` na pasta `BD` e clique em **Executar**, sem selecionar nenhum banco antes.
 
-> Projeto desenvolvido como parte do curso de **Desenvolvimento de Sistemas - SENAI**.
+O arquivo cria o banco `filmes`, a tabela `filmes` e três registros de exemplo. Se o banco já existir, a tabela é recriada.
+
+A conexão está configurada em `conexaoBD.php` com o padrão do XAMPP (servidor `localhost`, usuário `root`, sem senha, banco `filmes`). Ajuste os valores nesse arquivo caso seu ambiente use outras credenciais.
+
+### Execução
+
+Com o Apache e o MySQL em execução, acesse:
+
+```
+http://localhost/Projeto-Filmes-PHP/
+```
+
+Também é possível iniciar pelo servidor embutido do PHP, com o MariaDB em execução:
+
+```bash
+cd Projeto-Filmes-PHP
+php -S localhost:8000
+```
+
+## Licença
+
+Distribuído sob a licença MIT. Consulte o arquivo `LICENSE`.
+
+## Autor
+
+[joaomnz23](https://github.com/joaomnz23)
