@@ -11,11 +11,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="widht=device-widht, inital-scale=1.0">
     <title>Cadastro de Filmes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="cinema.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/cinema.ico">
 </head>
 <body> 
-    <a href="../index.php" class="botao-link">Voltar para a página de navegação</a> <br><br><br>
 
     <div class="container">
         <div>
@@ -48,7 +47,7 @@
 
                         $idFilme = $linha['idFilme'];
                         echo "<td> <a href='editar.php?filmes=$idFilme'> 
-                        <img src='alterar.png' alt='Editar' class='icones-tabela'> 
+                        <img src='assets/img/alterar.png' alt='Editar' class='icones-tabela'> 
                         </a> </td>";
                         echo "<td> <a href='deletar.php?filmes=$idFilme'> 
                         <img src='https://images.icon-icons.com/259/PNG/128/ic_delete_128_28267.png' alt='Deletar' class='icones-tabela'> 

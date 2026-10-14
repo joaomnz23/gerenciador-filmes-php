@@ -76,7 +76,7 @@
         
 
         // ========== INSERÇÃO DADOS ========== 
-        if (isset($nomeFilme_VAL) && isset($anoFilme_VAL) && isset($generoFilme_VAL) && isset($sinopseFilme_VAL)) {
+        if (isset($nomeFilme_VAL) && isset($anoFilme_VAL) && isset($generoFilme_VAL)) {
 
             require_once("conexaoBD.php");
             
@@ -100,10 +100,10 @@
         if((isset($nomeFilme_VAL)) && (isset($anoFilme_VAL)) && (isset($generoFilme_VAL)) && (isset($sinopseFilme_VAL))){
             echo "Cadastro concluído <br><br>";
             echo "<h3>Conferencia: </h3>";
-            echo "Nome Livro: " . $nomeLivro_VAL . "<br>";
-            echo "Ano Livro: " . $anoLivro_VAL . "<br>";
-            echo "ID Autor: " . $IDAutor_VAL . "<br>";
-            echo "ID Editora: " . $IDEditora_VAL . "<br>";
+            echo "Nome Filme: " . $nomeFilme_VAL . "<br>";
+            echo "Ano Filme: " . $anoFilme_VAL . "<br>";
+            echo "Gênero Filme: " . $generoFilme_VAL . "<br>";
+            echo "Sinopse Filme: " . $sinopseFilme_VAL . "<br>";
     }
 ?>
 </body>

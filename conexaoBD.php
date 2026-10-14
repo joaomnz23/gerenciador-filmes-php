@@ -2,7 +2,7 @@
     $host = 'localhost';
     $usuario = 'root';
     $senha = '';
-    $banco = 'b24_40498596_filmes';
+    $banco = 'filmes';
     
 
     // CONECTAR AOS BANCO DE DADOS
